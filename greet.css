@@ -4,15 +4,19 @@
     box-sizing: border-box;
 }
 
+.body-sect {
+    font-family: 'Indie Flower', cursive;
+}
+
 body {
     background-color: teal;
     
 }
 
 header {
-    background-color: rgb(54, 50, 50);
+    background-image: linear-gradient(to bottom right, royalblue, purple, crimson);
     padding: 3%;
-    border-bottom: solid 0.3rem darkorange;
+    border-bottom: solid 0.3rem steelblue;
     
     
 }
@@ -21,8 +25,8 @@ header {
     text-align: center;
     font-weight: bolder;
     font-size: 1.5rem;
-    font-family: 'Carter One', cursive;
-    color: lightgray;
+    font-family: 'Dela Gothic One', cursive;
+    color: whitesmoke;
 }
 
 .sect1 {
@@ -36,12 +40,11 @@ header {
 .sect1 h2 {
     text-align: center;
     font-weight: bolder;
-    font-size: 4.5rem;
+    font-size: 5.5rem;
     vertical-align: middle;
 }
 
 .sect1 .input {
-    /* text-align: center; */
     vertical-align: middle;
 }
 
@@ -52,6 +55,7 @@ header {
 
 .sect1 .nameInput {
     background-color: wheat;
+    border: none;
     
 }
 
@@ -79,16 +83,18 @@ header {
     padding: 4%;
     border-radius: 2rem;
     border: solid darkorange;
-    background-color: rgb(54, 50, 50);
-    color: lightgray;
+    background-color: transparent;
+    color: whitesmoke;
     font-weight: bolder;
+    outline: none;
 }
 
 .greetButton:hover {
     background-color: darkorange;
     color: black;
-    transition: ease-in-out 500ms;
+    transition: ease-in-out 300ms;
 }
+
 
 .sect4 {
     margin-top: 7%;
@@ -96,7 +102,7 @@ header {
     text-align: center;
 }
 
-.sect4 .greeting {
+.sect4 .greeting, .nameOutput {
     font-size: 2rem;
     font-weight: bold;
 }
@@ -125,7 +131,7 @@ header {
     }
 
     .radio {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
     .greetButton {
@@ -134,11 +140,12 @@ header {
         font-weight: bolder;
     }
 
-    .sect4 .greeting {
+    .sect4 .greeting, .nameOutput {
         font-size: 3rem;
     }
 
 }
+
 
 @media only screen and (min-width:1024px) {
     .title h1 {
@@ -157,7 +164,7 @@ header {
 
     .sect1 h3, .nameInput {
         display: inline-block;
-        margin-right: 3%;
+        margin-right: 5%;
         vertical-align: middle;
     }
 
@@ -179,21 +186,27 @@ header {
         font-size: 2rem;
     }
 
-    .sect3, .sect4 {
-        margin-top: 5%;
+    .sect1, .sect2, .sect3, .sect4 {
+        margin-top: 3%;
     }
 
 
 }
 
-@media only screen and (min-width:1440px) {
+@media only screen and (min-width:1445px) {
 
     .sect1 {
-        margin-top: 5%;
+        margin-top: 3%;
+    }
+
+    .sect1 h3, .nameInput {
+        display: inline-block;
+        margin-right: 3%;
+        vertical-align: middle;
     }
 
     .sect3 {
-        margin-top: 5%;
+        margin-top: 3%;
     }
 
     .sect2 {
@@ -242,7 +255,11 @@ header {
         font-weight: bolder;
     }
 
-    .sect4 .greeting {
+    .sect4 {
+        margin-top: 3%;
+    }
+
+    .sect4 .greeting, .nameOutput {
         font-size: 3.5rem;
     }
 }

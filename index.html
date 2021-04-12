@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Carter+One&family=Fredoka+One&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="greet.css">
     <title>Greetings</title>
 </head>
@@ -23,22 +26,22 @@
                 <span class="input"><h3>Name:</h3><input type="text" name="" value="" placeholder="Enter name here" class="nameInput"></span>
             </div>
             <div class="counter">
-                <span><h2>0</h2></span>
+                <span><h2 class="counting">0</h2></span>
             </div>
         </div>
 
         <div class="sect2">
             <div class="radio">
                 <div>
-                    <input type="radio" value="portuguese" class="langInput">
-                    <span class="portuguese">Portuguese</span> 
+                    <input type="radio" name="radioGreet" value="portuguese" class="langInput">
+                    <span class="portuguese">Portuguese</span>
                 </div>
                 <div>
-                    <input type="radio" value="Swahili" class="langInput">
-                    <span class="swahili">Swahili</span>
+                    <input type="radio" name="radioGreet" value="swedish" class="langInput">
+                    <span class="swahili">Swedish</span>
                 </div>
                 <div>
-                    <input type="radio" value="japanese" class="langInput">
+                    <input type="radio" name="radioGreet" value="japanese" class="langInput">
                     <span class="japanese">Japanese</span>
                 </div>
             </div>
@@ -51,7 +54,7 @@
         </div>
 
         <div class="sect4">
-            <span class="greeting">Hello,<span class="nameOutput"> ...</span></span>
+            <span class="greeting">Hello, </span> <span class="nameOutput">....</span>
         </div>
     </div>
 

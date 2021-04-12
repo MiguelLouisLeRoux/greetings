@@ -1,22 +1,12 @@
-let nameIn = document.querySelector(".nameInput");
-let count = document.querySelector(".counting");
-let language = document.querySelector(".langInput");
-let greet = document.querySelector(".greeting");
-let greetName = document.querySelector(".nameOutput");
-let greetBtn = document.querySelector(".greetButton");
-
-var counter = 0;
-
-
-function greetExercise() {
-    
+function greetExerciseFactFunct() {
+    var counter = 0;
     var radio = document.querySelector("input[name='radioGreet']:checked");
-
+    
     var portGreet = "Olá, ";
     var swedGreet = "Hej, ";
     var japGreet = "こんにちは, ";
     
-    if (nameIn.value == "") {
+    if (nameIn.value === "") {
         
     } else {
 
@@ -41,14 +31,5 @@ function greetExercise() {
 
     }
     
-    count.innerHTML = counter;
-    nameIn.value = "";
-    localStorage['tell'] = counter;
-}
-
-greetBtn.addEventListener('click', greetExercise);
-
-
-if (localStorage['tell']) {
-    counter = Number(localStorage['tell']);
+    return counter;
 }
