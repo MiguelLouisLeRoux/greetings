@@ -49,7 +49,7 @@ describe ("The Greeting Function", function(){
             var greetTest = greetExerciseFactFunct();
 
             greetTest.greetCounts("John");
-            greetTest.greetCounts("Kieth");
+            greetTest.greetCounts("Keith");
             greetTest.greetCounts("Amber");
 
             assert.equal(3,greetTest.values().counting);
@@ -59,7 +59,7 @@ describe ("The Greeting Function", function(){
             var greetTest = greetExerciseFactFunct();
 
             greetTest.greetCounts("John");
-            greetTest.greetCounts("Kieth");
+            greetTest.greetCounts("Keith");
             greetTest.greetCounts("Amber");
             greetTest.greetCounts("Amber");
 
@@ -72,12 +72,24 @@ describe ("The Greeting Function", function(){
             var greetTest = greetExerciseFactFunct();
 
             greetTest.greetCounts("John");
-            greetTest.greetCounts("Kieth");
+            greetTest.greetCounts("Keith");
             greetTest.greetCounts("Amber");
 
             greetTest.clearingButtonFactFunc()
 
             assert.equal(0,greetTest.values().counting);
         })
-    })    
+
+        it('Should be able to empty list of names', function(){
+            var greetTest = greetExerciseFactFunct();
+
+            greetTest.greetCounts("John");
+            greetTest.greetCounts("Keith");
+            greetTest.greetCounts("Amber");
+
+            greetTest.clearingButtonFactFunc()
+
+            assert.deepEqual({},greetTest.values().objNames);
+        })
+    }) 
 })

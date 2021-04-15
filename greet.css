@@ -40,15 +40,28 @@ header {
 .sect1 h2 {
     text-align: center;
     font-weight: bolder;
-    font-size: 5.5rem;
-    vertical-align: middle;
+    font-size: 2rem;
+    /* vertical-align: middle; */
 }
 
 .sect1 .input {
     vertical-align: middle;
 }
 
-.sect1 h3 {
+.sect1 .count-sect {
+    text-align: center;
+}
+
+.sect1 .counter {
+    vertical-align: middle;
+}
+
+.sect1 .name-title {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.sect1 .count-title {
     margin-top: 5%;
     margin-bottom: 5%;
 }
@@ -56,7 +69,6 @@ header {
 .sect1 .nameInput {
     background-color: wheat;
     border: none;
-    
 }
 
 .sect2 {
@@ -138,6 +150,27 @@ header {
     font-weight: bold;
 }
 
+.sect5 {
+    padding-top: 4%;
+    text-align: center;
+}
+
+.sect5 a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: crimson;
+}
+
+.sect5 a:hover {
+    color: red;
+}
+
+.sect5 a:active {
+    /* box-shadow: 1rem 1rem 1rem darkred; */
+    transform: translateY(-1rem);
+}
+
 @media only screen and (min-width:430px) {
 
     .sect1, .sect2, .sect3, .sect4 {
@@ -217,7 +250,19 @@ header {
     }
 
     .sect1 h2 {
-        font-size: 8rem;
+        font-size: 5rem;
+    }
+
+    .sect1 .count-title {
+        display: inline-block;
+        /* margin-right: 5%; */
+        vertical-align: middle;
+    }
+
+    .sect1 .counting {
+        display: inline;
+        /* margin-right: 5%; */
+        vertical-align: middle;
     }
 
     .sect1 h3, .nameInput {
@@ -262,9 +307,23 @@ header {
         margin-top: 3%;
     }
 
+    .sect1 h2 {
+        font-size: 5rem;
+    }
+
     .sect1 h3, .nameInput {
         display: inline-block;
         margin-right: 3%;
+        vertical-align: middle;
+    }
+
+    .sect1 .counting {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .sect1 .count-title {
+        display: inline-block;
         vertical-align: middle;
     }
 
