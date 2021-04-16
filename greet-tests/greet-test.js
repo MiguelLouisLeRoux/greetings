@@ -34,6 +34,14 @@ describe ("The Greeting Function", function(){
             var greetTest = greetExerciseFactFunct();
             assert.equal('こんにちは, ',greetTest.values().gJap);
         })
+
+        it('Should return error message when no name has been entered', function(){
+            var greetTest = greetExerciseFactFunct();
+
+            greetTest.greetCounts("");
+
+            assert.equal('Oops, you have not entered a name.', greetTest.values().errorMes);
+        })
     })
 
     describe ("Should be able increment count when necessary", function(){
@@ -64,6 +72,26 @@ describe ("The Greeting Function", function(){
             greetTest.greetCounts("Amber");
 
             assert.equal(3,greetTest.values().counting);
+        })
+    })
+
+    describe ("Should be able to return error messages when necessary", function(){
+        
+        it('Should return error message when name has been entered more than once', function(){
+            var greetTest = greetExerciseFactFunct();
+
+            greetTest.greetCounts("Miguel");
+            greetTest.greetCounts("Miguel");
+
+            assert.equal(greetTest.values().sGreet, greetTest.values().theGreeting);
+        })
+
+        it('Should return error message when no name has been entered', function(){
+            var greetTest = greetExerciseFactFunct();
+
+            greetTest.greetCounts("");
+
+            assert.equal('Oops, you have not entered a name.', greetTest.values().errorMes);
         })
     })
 

@@ -1,3 +1,4 @@
+    
 function greetExerciseFactFunct() {
 
     //counter and object list
@@ -7,10 +8,16 @@ function greetExerciseFactFunct() {
     //name variable
     var userName = "";
 
+    //Error message variable
+    var error = "Oops, you have not entered a name.";
+    var secondGreet = "You have already been greeted.";
+
     //languages
+    var eng = "Hello, ";
     var portGreet = "Olá, ";
     var swedGreet = "Hej, ";
     var japGreet = "こんにちは, ";
+    var theGreet = "";
     
     function getName(nameInput) {
         userName = nameInput.trim();
@@ -20,46 +27,58 @@ function greetExerciseFactFunct() {
 
     function greetCounts(userName) {
         if (userName == "") {
-            
+            theGreet = error;
+            return error;
         } else {
 
             if (namesList[userName] === undefined) {
-
-                // if (!radio) {
-                // greetName.innerHTML = userName + " !";
                 counter++;
-                // } else if (radio) {
-
-                // greetName.innerHTML = userName + " !";
-
-                // if (radio.value === "portuguese") {
-                //     // greet.innerHTML = portGreet;
-                //     counter++;
-                // } else if (radio.value === "swedish") {
-                //     // greet.innerHTML = swedGreet;
-                //     counter++;
-                // } else if (radio.value === "japanese") {
-                //     // greet.innerHTML = japGreet;
-                //     counter++;
-                // }
-            // }
-
                 namesList[userName] = 1;
-            } else if (namesList.hasOwnProperty(userName)){
+                theGreet = eng + userName + " !";
+                
+               
 
+            } else if (namesList.hasOwnProperty(userName)){
+                theGreet = secondGreet;
+                return theGreet;
             }
 
         }
 
     }
     
+    function radioCheck(radVal) {
+        if (userName == "") {
+            theGreet = error;
+        } else {
 
-    // nameIn.value = "";
+            if (namesList[userName] === undefined) {
+                if (radVal === "portuguese") {
+                    counter++;
+                    namesList[userName] = 1;
+                    theGreet = portGreet + userName + " !";
+                } else if (radVal === "swedish") {
+                    counter++;
+                    namesList[userName] = 1;
+                    theGreet = swedGreet + userName + " !";
+                } else if (radVal === "japanese") {
+                    counter++;
+                    namesList[userName] = 1;
+                    theGreet = japGreet + userName + " !";
+                }
+            } else if (namesList.hasOwnProperty(userName)){
+                theGreet = secondGreet;
+            }
+        }
+    }
     
     function values() {
         return {
             counting : counter,
             theName : userName,
+            errorMes : error,
+            sGreet : secondGreet,
+            theGreeting : theGreet,
             gPort : portGreet,
             gSwed : swedGreet,
             gJap : japGreet,
@@ -68,24 +87,25 @@ function greetExerciseFactFunct() {
     }
 
     function clearingButtonFactFunc() {
-    counter = 0;
-    // localStorage['tell'] = counter;
-    // greetName.innerHTML = "....";
-    // greet.innerHTML = "Hello, ";
-    // count.innerHTML = counter;
+        counter = 0;
+        namesList = {};
+        theGreet = "";
+    }
 
-    namesList = {};
-    
-}
+    function storage() {
+        localStorage['tell'] = counter;
+        localStorage['names'] = JSON.stringify(namesList);
+    }
+
 
     return { getName,
              greetCounts,
+             radioCheck,
              values,
+             storage,
              clearingButtonFactFunc
     }
     
 }
-
-
 
 
