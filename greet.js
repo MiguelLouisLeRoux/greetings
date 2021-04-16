@@ -31,24 +31,20 @@ function greetExercise() {
             greetName.innerHTML = "";
             greet.innerHTML = "";
             }, 2000);
-
+            
     }
     
-
     count.innerHTML = greetFactFunc.values().counting;
     nameIn.value = "";
-    greetFactFunc.storage();
 
+    greetFactFunc.setLoc(); 
 }
 
 greetBtn.addEventListener('click', greetExercise);
 
 count.innerHTML = localStorage['tell'];
+greetFactFunc.retrieve();
 
-if (localStorage['tell'] && localStorage['names']) {
-    greetFactFunc.values().counting = Number(localStorage['tell']);
-    greetFactFunc.values().objNames = JSON.parse((localStorage['names']));
-}
 
 function clearingButton() {
 

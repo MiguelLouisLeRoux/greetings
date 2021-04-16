@@ -22,7 +22,7 @@ describe ("The Greeting Function", function(){
     describe ("Should be able to return greeting in optional language", function(){
         it('Should return greeting in Portuguese', function(){
             var greetTest = greetExerciseFactFunct();
-            assert.equal('Olá, ',greetTest.values().gPort);
+            assert.equal("Olá, ",greetTest.values().gPort);
         })
 
         it('Should return greeting in Swedish', function(){
@@ -33,14 +33,6 @@ describe ("The Greeting Function", function(){
         it('Should return greeting in Japanese', function(){
             var greetTest = greetExerciseFactFunct();
             assert.equal('こんにちは, ',greetTest.values().gJap);
-        })
-
-        it('Should return error message when no name has been entered', function(){
-            var greetTest = greetExerciseFactFunct();
-
-            greetTest.greetCounts("");
-
-            assert.equal('Oops, you have not entered a name.', greetTest.values().errorMes);
         })
     })
 

@@ -1,4 +1,3 @@
-    
 function greetExerciseFactFunct() {
 
     //counter and object list
@@ -57,14 +56,17 @@ function greetExerciseFactFunct() {
                     counter++;
                     namesList[userName] = 1;
                     theGreet = portGreet + userName + " !";
+                    return theGreet;
                 } else if (radVal === "swedish") {
                     counter++;
                     namesList[userName] = 1;
                     theGreet = swedGreet + userName + " !";
+                    return theGreet;
                 } else if (radVal === "japanese") {
                     counter++;
                     namesList[userName] = 1;
                     theGreet = japGreet + userName + " !";
+                    return theGreet;
                 }
             } else if (namesList.hasOwnProperty(userName)){
                 theGreet = secondGreet;
@@ -92,17 +94,24 @@ function greetExerciseFactFunct() {
         theGreet = "";
     }
 
-    function storage() {
+    function setLoc() {
         localStorage['tell'] = counter;
         localStorage['names'] = JSON.stringify(namesList);
     }
 
+    function retrieve() {
+        if (localStorage['tell'] && localStorage['names']) {
+            counter = Number(localStorage['tell']);
+            namesList = JSON.parse((localStorage['names']));
+        }
+    }
 
     return { getName,
              greetCounts,
              radioCheck,
              values,
-             storage,
+             setLoc,
+             retrieve,
              clearingButtonFactFunc
     }
     
