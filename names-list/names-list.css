@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: teal;
+    
+}
+
+.body-sect {
+    font-family: 'Indie Flower', cursive;
+}
+
+header {
+    background-image: linear-gradient(to bottom right, royalblue, purple, crimson);
+    padding: 3%;
+    border-bottom: solid 0.3rem steelblue;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 1rem;
+    font-family: 'Dela Gothic One', cursive;
+    color: whitesmoke;
+}

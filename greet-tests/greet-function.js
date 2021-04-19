@@ -10,6 +10,7 @@ function greetExerciseFactFunct() {
     //Error message variable
     var error = "Oops, you have not entered a name.";
     var secondGreet = "You have already been greeted.";
+    var noRad = "Oops, you have not selected a language."
 
     //languages
     var eng = "Hello, ";
@@ -17,6 +18,7 @@ function greetExerciseFactFunct() {
     var swedGreet = "Hej, ";
     var japGreet = "こんにちは, ";
     var theGreet = "";
+    var theWarn = "";
     
     function getName(nameInput) {
         userName = nameInput.trim();
@@ -25,7 +27,7 @@ function greetExerciseFactFunct() {
 
 
     function greetCounts(userName) {
-        if (userName == "") {
+        if (userName == "" || typeof userName === "number") {
             theGreet = error;
             return error;
         } else {
@@ -39,37 +41,50 @@ function greetExerciseFactFunct() {
 
             } else if (namesList.hasOwnProperty(userName)){
                 theGreet = secondGreet;
+
+                namesList[userName] ++;
+
                 return theGreet;
             }
 
         }
 
     }
+
+    function noRadioButton() {
+            
+            theGreet = noRad;
+    
+    
+        }
     
     function radioCheck(radVal) {
-        if (userName == "") {
+        if (userName == "" || !/^[a-zA-Z]+$/.test(userName)) {
             theGreet = error;
         } else {
 
-            if (namesList[userName] === undefined) {
-                if (radVal === "portuguese") {
-                    counter++;
-                    namesList[userName] = 1;
-                    theGreet = portGreet + userName + " !";
-                    return theGreet;
-                } else if (radVal === "swedish") {
-                    counter++;
-                    namesList[userName] = 1;
-                    theGreet = swedGreet + userName + " !";
-                    return theGreet;
-                } else if (radVal === "japanese") {
-                    counter++;
-                    namesList[userName] = 1;
-                    theGreet = japGreet + userName + " !";
-                    return theGreet;
+            if (/^[a-zA-Z]+$/.test(userName)) {
+                if (namesList[userName] === undefined) {
+                    if (radVal === "portuguese") {
+                        counter++;
+                        namesList[userName] = 1;
+                        theGreet = portGreet + userName + " !";
+                        return theGreet;
+                    } else if (radVal === "swedish") {
+                        counter++;
+                        namesList[userName] = 1;
+                        theGreet = swedGreet + userName + " !";
+                        return theGreet;
+                    } else if (radVal === "japanese") {
+                        counter++;
+                        namesList[userName] = 1;
+                        theGreet = japGreet + userName + " !";
+                        return theGreet;
+                    }
+                } else if (namesList.hasOwnProperty(userName)){
+                    theGreet = secondGreet;
+                    namesList[userName] ++;
                 }
-            } else if (namesList.hasOwnProperty(userName)){
-                theGreet = secondGreet;
             }
         }
     }
@@ -112,6 +127,7 @@ function greetExerciseFactFunct() {
              values,
              setLoc,
              retrieve,
+             noRadioButton,
              clearingButtonFactFunc
     }
     

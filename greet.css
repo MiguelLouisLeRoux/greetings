@@ -21,6 +21,18 @@ header {
     
 }
 
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: purple;
+}
+
+.names-link {
+
+    margin-top: 5%;
+    text-align: center;
+}
+
 .title h1 {
     text-align: center;
     font-weight: bolder;
@@ -185,6 +197,8 @@ header {
         font-size: 5rem;
     }
 
+    
+
     .sect1 h3 {
         font-size: 2rem;
     }
@@ -259,6 +273,10 @@ header {
         text-align: center;
     }
     
+    a {
+        font-size: 1.3rem;
+    }
+
     .clearButton, .greetButton {
         width: 13rem;
         padding: 1.5%;
@@ -316,6 +334,10 @@ header {
 
     .radio {
         font-size: 2rem;
+    }
+
+    a {
+        font-size: 1.5rem;
     }
 
     .clearButton, .greetButton {

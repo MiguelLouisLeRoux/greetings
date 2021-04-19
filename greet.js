@@ -8,7 +8,7 @@ let clearBtn = document.querySelector(".clearButton");
 
 
 var greetFactFunc = greetExerciseFactFunct();
-
+count.innerHTML = greetFactFunc.values().counting;
 function greetExercise() {
 
     var radio = document.querySelector("input[name='radioGreet']:checked");
@@ -16,7 +16,8 @@ function greetExercise() {
 
     if (!radio) {
 
-        greetFactFunc.greetCounts(greetFactFunc.values().theName);
+        // greetFactFunc.greetCounts(greetFactFunc.values().theName);
+        greetFactFunc.noRadioButton();
         greet.innerHTML = greetFactFunc.values().theGreeting;
         setTimeout(function(){
             greetName.innerHTML = "";
@@ -36,6 +37,8 @@ function greetExercise() {
     
     count.innerHTML = greetFactFunc.values().counting;
     nameIn.value = "";
+
+    console.log(typeof greetFactFunc.values().theName);
 
     greetFactFunc.setLoc(); 
 }
