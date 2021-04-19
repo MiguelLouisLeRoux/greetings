@@ -3,6 +3,7 @@ let count = document.querySelector(".counting");
 let language = document.querySelector(".langInput");
 let greet = document.querySelector(".greeting");
 let greetName = document.querySelector(".nameOutput");
+let theWar = document.querySelector(".errorMes");
 let greetBtn = document.querySelector(".greetButton");
 let clearBtn = document.querySelector(".clearButton");
 
@@ -18,10 +19,10 @@ function greetExercise() {
 
         // greetFactFunc.greetCounts(greetFactFunc.values().theName);
         greetFactFunc.noRadioButton();
-        greet.innerHTML = greetFactFunc.values().theGreeting;
+        theWar.innerHTML = greetFactFunc.values().theError;
         setTimeout(function(){
-            greetName.innerHTML = "";
-            greet.innerHTML = "";
+            theWar.innerHTML = "";
+            // theWar.innerHTML = "";
             }, 2000);
 
     } else if (radio) {
@@ -38,7 +39,7 @@ function greetExercise() {
     count.innerHTML = greetFactFunc.values().counting;
     nameIn.value = "";
 
-    console.log(typeof greetFactFunc.values().theName);
+    console.log(greetFactFunc.values().objNames);
 
     greetFactFunc.setLoc(); 
 }

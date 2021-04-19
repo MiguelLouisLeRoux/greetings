@@ -27,6 +27,12 @@ a {
     color: purple;
 }
 
+p {
+    color: crimson;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.6rem;
+}
+
 .names-link {
 
     margin-top: 5%;
@@ -174,11 +180,11 @@ a {
     color: crimson;
 }
 
-.sect5 a:hover {
+.names-link a:hover {
     color: red;
 }
 
-.sect5 a:active {
+.names-link a:active {
     /* box-shadow: 1rem 1rem 1rem darkred; */
     transform: translateY(-1rem);
 }
@@ -197,6 +203,9 @@ a {
         font-size: 5rem;
     }
 
+    p {
+        font-size: 1rem;
+    }
     
 
     .sect1 h3 {
@@ -264,6 +273,10 @@ a {
         margin-left: 5%;
         vertical-align: middle;
     }
+
+    .input {
+        display: inline;
+    }
     
     .sect1 .counting {
         display: inline;
@@ -297,6 +310,14 @@ a {
 
     .sect1 h5 {
         font-size: 5rem;
+    }
+
+    .input {
+        display: inline;
+    }
+
+    p {
+        font-size: 1.2rem;
     }
 
     .sect1 .count-title {
@@ -370,9 +391,17 @@ a {
         vertical-align: middle;
     }
 
+    p {
+        font-size: 1.5rem;
+    }
+
     .sect1 .counting {
         display: inline-block;
         vertical-align: middle;
+    }
+
+    .input {
+        display: inline;
     }
 
     .sect1 .count-title {

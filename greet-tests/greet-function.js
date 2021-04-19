@@ -8,7 +8,7 @@ function greetExerciseFactFunct() {
     var userName = "";
 
     //Error message variable
-    var error = "Oops, you have not entered a name.";
+    var error = "Oops, no name entered.";
     var secondGreet = "You have already been greeted.";
     var noRad = "Oops, you have not selected a language."
 
@@ -27,7 +27,7 @@ function greetExerciseFactFunct() {
 
 
     function greetCounts(userName) {
-        if (userName == "" || typeof userName === "number") {
+        if (userName == "") {
             theGreet = error;
             return error;
         } else {
@@ -53,14 +53,13 @@ function greetExerciseFactFunct() {
 
     function noRadioButton() {
             
-            theGreet = noRad;
-    
+            theWarn = noRad;
     
         }
     
     function radioCheck(radVal) {
         if (userName == "" || !/^[a-zA-Z]+$/.test(userName)) {
-            theGreet = error;
+            theWarn = error;
         } else {
 
             if (/^[a-zA-Z]+$/.test(userName)) {
@@ -99,7 +98,8 @@ function greetExerciseFactFunct() {
             gPort : portGreet,
             gSwed : swedGreet,
             gJap : japGreet,
-            objNames : namesList
+            objNames : namesList,
+            theError : theWarn
         }
     }
 
