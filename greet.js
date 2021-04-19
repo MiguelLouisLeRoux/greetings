@@ -22,7 +22,6 @@ function greetExercise() {
         theWar.innerHTML = greetFactFunc.values().theError;
         setTimeout(function(){
             theWar.innerHTML = "";
-            // theWar.innerHTML = "";
             }, 2000);
 
     } else if (radio) {

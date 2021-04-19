@@ -10,10 +10,10 @@ function greetExerciseFactFunct() {
     //Error message variable
     var error = "Oops, no name entered.";
     var secondGreet = "You have already been greeted.";
-    var noRad = "Oops, you have not selected a language."
+    var noRad = "Oops, you have not selected a language.";
 
     //languages
-    var eng = "Hello, ";
+    // var eng = "Hello, ";
     var portGreet = "Olá, ";
     var swedGreet = "Hej, ";
     var japGreet = "こんにちは, ";
@@ -26,43 +26,47 @@ function greetExerciseFactFunct() {
     }
 
 
-    function greetCounts(userName) {
-        if (userName == "") {
-            theGreet = error;
-            return error;
-        } else {
+    // function greetCounts(userName) {
+    //     if (userName == "") {
+    //         theGreet = error;
+    //         return error;
+    //     } else {
 
-            if (namesList[userName] === undefined) {
-                counter++;
-                namesList[userName] = 1;
-                theGreet = eng + userName + " !";
+    //         if (namesList[userName] === undefined) {
+    //             counter++;
+    //             namesList[userName] = 1;
+    //             theGreet = eng + userName + " !";
                 
                
 
-            } else if (namesList.hasOwnProperty(userName)){
-                theGreet = secondGreet;
+    //         } else if (namesList.hasOwnProperty(userName)){
+    //             theGreet = secondGreet;
 
-                namesList[userName] ++;
+    //             namesList[userName] ++;
 
-                return theGreet;
-            }
+    //             return theGreet;
+    //         }
 
-        }
+    //     }
 
-    }
+    // }
 
     function noRadioButton() {
+        if (userName === "" || !/^[a-zA-Z]+$/.test(userName)) {
             
+            theWarn = error;
+        } else { 
             theWarn = noRad;
-    
         }
+    }
     
     function radioCheck(radVal) {
-        if (userName == "" || !/^[a-zA-Z]+$/.test(userName)) {
+        if (userName === "" || !/^[a-zA-Z]+$/.test(userName)) {
+            
             theWarn = error;
         } else {
-
-            if (/^[a-zA-Z]+$/.test(userName)) {
+        
+             if (/^[a-zA-Z]+$/.test(userName)) {
                 if (namesList[userName] === undefined) {
                     if (radVal === "portuguese") {
                         counter++;
@@ -122,7 +126,7 @@ function greetExerciseFactFunct() {
     }
 
     return { getName,
-             greetCounts,
+            //  greetCounts,
              radioCheck,
              values,
              setLoc,

@@ -26,3 +26,21 @@ h1 {
     font-family: 'Dela Gothic One', cursive;
     color: whitesmoke;
 }
+
+body a {
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    color:purple;
+    padding-bottom: 3%;
+    
+}
+
+.link-back {
+    text-align: center;
+}
+
+a:hover {
+    color: coral;
+    transition: 200ms;
+}

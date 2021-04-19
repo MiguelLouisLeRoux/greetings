@@ -40,7 +40,9 @@ describe ("The Greeting Function", function(){
         it('Should not increment count when greeting no name', function(){
             var greetTest = greetExerciseFactFunct();
 
-            greetTest.greetCounts("");
+            // greetTest.greetCounts("");
+            greetTest.getName("");
+            greetTest.radioCheck("portuguese");
 
             assert.equal(0,greetTest.values().counting);
         })
@@ -48,9 +50,12 @@ describe ("The Greeting Function", function(){
         it('Should increment count when greeting name', function(){
             var greetTest = greetExerciseFactFunct();
 
-            greetTest.greetCounts("John");
-            greetTest.greetCounts("Keith");
-            greetTest.greetCounts("Amber");
+            greetTest.getName("John");
+            greetTest.radioCheck("portuguese");
+            greetTest.getName("Keith");
+            greetTest.radioCheck("portuguese");
+            greetTest.getName("Amber");
+            greetTest.radioCheck("portuguese");
 
             assert.equal(3,greetTest.values().counting);
         })
@@ -58,10 +63,13 @@ describe ("The Greeting Function", function(){
         it('Should not increment count when greeting the same name', function(){
             var greetTest = greetExerciseFactFunct();
 
-            greetTest.greetCounts("John");
-            greetTest.greetCounts("Keith");
-            greetTest.greetCounts("Amber");
-            greetTest.greetCounts("Amber");
+            greetTest.getName("John");
+            greetTest.radioCheck("portuguese");
+            greetTest.getName("Keith");
+            greetTest.radioCheck("portuguese");
+            greetTest.getName("Amber");
+            greetTest.radioCheck("portuguese");
+            greetTest.getName("Amber");
 
             assert.equal(3,greetTest.values().counting);
         })
@@ -72,18 +80,39 @@ describe ("The Greeting Function", function(){
         it('Should return error message when name has been entered more than once', function(){
             var greetTest = greetExerciseFactFunct();
 
-            greetTest.greetCounts("Miguel");
-            greetTest.greetCounts("Miguel");
+            greetTest.getName("Miguel");
+            greetTest.radioCheck("portuguese");
+            greetTest.getName("Miguel");
+            greetTest.radioCheck("portuguese");
 
-            assert.equal(greetTest.values().sGreet, greetTest.values().theGreeting);
+            assert.equal("You have already been greeted.", greetTest.values().theError);
         })
 
         it('Should return error message when no name has been entered', function(){
             var greetTest = greetExerciseFactFunct();
 
-            greetTest.greetCounts("");
+            greetTest.getName("");
+            greetTest.radioCheck("portuguese");
 
-            assert.equal('Oops, you have not entered a name.', greetTest.values().errorMes);
+            assert.equal('Oops, no name entered.', greetTest.values().theError);
+        })
+
+        it('Should return error message when no language option has been selected', function(){
+            var greetTest = greetExerciseFactFunct();
+
+            greetTest.getName("Miguel");
+            greetTest.noRadioButton();
+            
+            assert.equal("Oops, you have not selected a language.", greetTest.values().theError);
+        })
+
+        it('Should return error message when numbers and symbols are entered', function(){
+            var greetTest = greetExerciseFactFunct();
+
+            greetTest.getName("!!@#444");
+            greetTest.radioCheck("portuguese");
+            
+            assert.equal("Oops, no name entered.", greetTest.values().theError);
         })
     })
 
@@ -91,9 +120,12 @@ describe ("The Greeting Function", function(){
         it('Should be able reset counter to 0', function(){
             var greetTest = greetExerciseFactFunct();
 
-            greetTest.greetCounts("John");
-            greetTest.greetCounts("Keith");
-            greetTest.greetCounts("Amber");
+            greetTest.getName("John");
+            greetTest.radioCheck("portuguese");
+            greetTest.getName("Keith");
+            greetTest.radioCheck("portuguese");
+            greetTest.getName("Amber");
+            greetTest.radioCheck("portuguese");
 
             greetTest.clearingButtonFactFunc()
 
@@ -103,9 +135,12 @@ describe ("The Greeting Function", function(){
         it('Should be able to empty list of names', function(){
             var greetTest = greetExerciseFactFunct();
 
-            greetTest.greetCounts("John");
-            greetTest.greetCounts("Keith");
-            greetTest.greetCounts("Amber");
+            greetTest.getName("John");
+            greetTest.radioCheck("portuguese");
+            greetTest.getName("Keith");
+            greetTest.radioCheck("portuguese");
+            greetTest.getName("Amber");
+            greetTest.radioCheck("portuguese"); 
 
             greetTest.clearingButtonFactFunc()
 
