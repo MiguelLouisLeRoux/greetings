@@ -37,7 +37,7 @@ header {
     grid-template-columns: 1fr 1fr;
 }
 
-.sect1 h2 {
+.sect1 h5 {
     text-align: center;
     font-weight: bolder;
     font-size: 2rem;
@@ -181,7 +181,7 @@ header {
         font-size: 2.5rem;
     }
 
-    .sect1 h2 {
+    .sect1 h5 {
         font-size: 5rem;
     }
 
@@ -233,6 +233,9 @@ header {
         display: inline;
         vertical-align: middle;
     }
+    .input-sect {
+        text-align: center;
+    }
     
     .clearButton, .greetButton {
         width: 13rem;
@@ -251,6 +254,9 @@ header {
     .sect1 .counting {
         display: inline;
         vertical-align: middle;
+    }
+    .sect1 .input-sect{
+        text-align: center;
     }
     
     .clearButton, .greetButton {
@@ -271,7 +277,7 @@ header {
         padding-left: 10%;
     }
 
-    .sect1 h2 {
+    .sect1 h5 {
         font-size: 5rem;
     }
 
@@ -299,6 +305,7 @@ header {
 
     .input-sect {
         padding-top: 5%;
+        text-align: center;
     }
 
     .sect2 {
@@ -331,7 +338,7 @@ header {
         padding-right: 5%;
     }
 
-    .sect1 h2 {
+    .sect1 h5 {
         font-size: 5rem;
     }
 
@@ -364,8 +371,8 @@ header {
     }
 
     .sect1 {
-        padding-left: 20%;
-        padding-left: 20%;
+        padding-left: 15%;
+        padding-right: 15%;
     }
 
     .sect1 h2 {
