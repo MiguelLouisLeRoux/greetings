@@ -182,7 +182,7 @@ header {
     }
 
     .sect1 h2 {
-        font-size: 7rem;
+        font-size: 5rem;
     }
 
     .sect1 h3 {
@@ -223,6 +223,17 @@ header {
 }
 
 @media only screen and (min-width:540px) {
+    .sect1 .count-title {
+        display: inline-block;
+        margin-right: 5%;
+        vertical-align: middle;
+    }
+    
+    .sect1 .counting {
+        display: inline;
+        vertical-align: middle;
+    }
+    
     .clearButton, .greetButton {
         width: 13rem;
         padding: 1.5%;
@@ -231,6 +242,17 @@ header {
 }
 
 @media only screen and (min-width:768px) {
+    .sect1 .count-title {
+        display: inline-block;
+        margin-left: 5%;
+        vertical-align: middle;
+    }
+    
+    .sect1 .counting {
+        display: inline;
+        vertical-align: middle;
+    }
+    
     .clearButton, .greetButton {
         width: 13rem;
         padding: 1.5%;
@@ -305,6 +327,8 @@ header {
 
     .sect1 {
         margin-top: 3%;
+        padding-left: 5%;
+        padding-right: 5%;
     }
 
     .sect1 h2 {
