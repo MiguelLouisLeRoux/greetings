@@ -6,6 +6,7 @@ function greetExerciseFactFunct() {
 
     //name variable
     var userName = "";
+    var namesL = "";
 
     //Error message variable
     var error = "Oops, no name entered.";
@@ -25,38 +26,13 @@ function greetExerciseFactFunct() {
         return userName;
     }
 
-
-    // function greetCounts(userName) {
-    //     if (userName == "") {
-    //         theGreet = error;
-    //         return error;
-    //     } else {
-
-    //         if (namesList[userName] === undefined) {
-    //             counter++;
-    //             namesList[userName] = 1;
-    //             theGreet = eng + userName + " !";
-                
-               
-
-    //         } else if (namesList.hasOwnProperty(userName)){
-    //             theGreet = secondGreet;
-
-    //             namesList[userName] ++;
-
-    //             return theGreet;
-    //         }
-
-    //     }
-
-    // }
-
     function noRadioButton() {
         if (userName === "" || !/^[a-zA-Z]+$/.test(userName)) {
-            
+            theGreet = "";
             theWarn = error;
         } else { 
             theWarn = noRad;
+            theGreet = "";
         }
     }
     
@@ -64,29 +40,42 @@ function greetExerciseFactFunct() {
         if (userName === "" || !/^[a-zA-Z]+$/.test(userName)) {
             
             theWarn = error;
+            theGreet = "";
         } else {
+            // namesList = name1;
         
-             if (/^[a-zA-Z]+$/.test(userName)) {
+            if (/^[a-zA-Z]+$/.test(userName)) {
                 if (namesList[userName] === undefined) {
                     if (radVal === "portuguese") {
                         counter++;
                         namesList[userName] = 1;
                         theGreet = portGreet + userName + " !";
+                        theWarn = "";
                         return theGreet;
+                        // return namesList;
                     } else if (radVal === "swedish") {
                         counter++;
                         namesList[userName] = 1;
                         theGreet = swedGreet + userName + " !";
+                        theWarn = "";
                         return theGreet;
+                        // return namesList;
                     } else if (radVal === "japanese") {
                         counter++;
                         namesList[userName] = 1;
                         theGreet = japGreet + userName + " !";
+                        theWarn = "";
                         return theGreet;
+                        // return namesList;
                     }
+
+                    theWarn = "";
+
                 } else if (namesList.hasOwnProperty(userName)){
-                    theGreet = secondGreet;
+                    theWarn = secondGreet;
+                    theGreet = "";
                     namesList[userName] ++;
+                    return namesList;
                 }
             }
         }
@@ -103,7 +92,8 @@ function greetExerciseFactFunct() {
             gSwed : swedGreet,
             gJap : japGreet,
             objNames : namesList,
-            theError : theWarn
+            theError : theWarn,
+            theNameList : namesL
         }
     }
 
@@ -111,6 +101,14 @@ function greetExerciseFactFunct() {
         counter = 0;
         namesList = {};
         theGreet = "";
+        localStorage.clear();
+        
+    }
+
+    function setNames() {
+        for (const prop in namesList) {
+            namesL += " " + prop + ": " + namesList[prop] + ";";
+        }
     }
 
     function setLoc() {
@@ -126,12 +124,12 @@ function greetExerciseFactFunct() {
     }
 
     return { getName,
-            //  greetCounts,
              radioCheck,
              values,
              setLoc,
              retrieve,
              noRadioButton,
+             setNames,
              clearingButtonFactFunc
     }
     
