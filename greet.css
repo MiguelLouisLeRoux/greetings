@@ -323,6 +323,10 @@ p {
         height:1.2rem;
     }
 
+    .fl {
+        text-align: right;
+    }
+
     .sect {
        /* float: right; */
        vertical-align: middle;
