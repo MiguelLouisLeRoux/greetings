@@ -98,10 +98,11 @@ function greetExerciseFactFunct() {
     }
 
     function clearingButtonFactFunc() {
+        localStorage.clear;
         counter = 0;
         namesList = {};
         theGreet = "";
-        localStorage.clear();
+        
         
     }
 

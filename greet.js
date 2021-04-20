@@ -10,15 +10,7 @@ let clearBtn = document.querySelector(".clearButton");
 
 
 var greetFactFunc = greetExerciseFactFunct();
-// count.innerHTML = greetFactFunc.values().counting;
 
-// var nam = {};
-
-
-// if (typeof localStorage['names'] != undefined) {
-    
-//     nam = JSON.parse(localStorage.getItem('names'));
-// }
 
 function greetExercise() {
 
@@ -27,7 +19,6 @@ function greetExercise() {
 
     if (!radio) {
 
-        // greetFactFunc.greetCounts(greetFactFunc.values().theName);
         greetFactFunc.noRadioButton();
         theWar.innerHTML = greetFactFunc.values().theError;
         setTimeout(function(){
@@ -36,13 +27,12 @@ function greetExercise() {
 
     } else if (radio) {
         
-        // greetFactFunc.radioCheck(radio.value);
+        
         greetFactFunc.radioCheck(radio.value);
-        // console.log(nam);
-        // localStorage.setItem('names' ,JSON.stringify(nam));
+        
         greet.innerHTML = greetFactFunc.values().theGreeting;
         theWar.innerHTML = greetFactFunc.values().theError;
-        // loc = greetFactFunc.values().objNames;
+        
         setTimeout(function(){
             greetName.innerHTML = "";
             greet.innerHTML = "";
@@ -52,30 +42,35 @@ function greetExercise() {
     }
     
     count.innerHTML = greetFactFunc.values().counting;
-    // count.innerHTML = Object.keys(nam).length;
+    
     nameIn.value = "";
 
     console.log(greetFactFunc.values().objNames);
 
     greetFactFunc.setLoc(); 
     localStorage['tell'] = greetFactFunc.values().counting;
-    // localStorage['names'] = JSON.stringify(greetFactFunc.values().objNames);
-    // console.log(localStorage['names']);
+    
     
 }
 
 greetBtn.addEventListener('click', greetExercise);
 
-count.innerHTML = localStorage['tell'];
+if (localStorage["tell"] != undefined) {
+    count.innerHTML = localStorage['tell'];
+} else {
+    count.innerHTML = 0;
+}
+
 greetFactFunc.retrieve();
 
 
 
 function clearingButton() {
+    localStorage.clear();
 
     greetFactFunc.clearingButtonFactFunc();
-    localStorage['tell'] = greetFactFunc.values().counting;
-    greetName.innerHTML = greetFactFunc.values().theGreeting;
+    // localStorage['tell'] = greetFactFunc.values().counting;
+    // greetName.innerHTML = greetFactFunc.values().theGreeting;
     count.innerHTML = greetFactFunc.values().counting;
 }
 
