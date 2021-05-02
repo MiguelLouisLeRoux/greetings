@@ -17,5 +17,3 @@ for (const prop in name12) {
     newDiv.appendChild(newText);
     namesL.appendChild(newDiv);
 }
-
-

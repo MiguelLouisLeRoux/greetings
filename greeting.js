@@ -69,8 +69,6 @@ function clearingButton() {
     localStorage.clear();
 
     greetFactFunc.clearingButtonFactFunc();
-    // localStorage['tell'] = greetFactFunc.values().counting;
-    // greetName.innerHTML = greetFactFunc.values().theGreeting;
     count.innerHTML = greetFactFunc.values().counting;
 }
 
