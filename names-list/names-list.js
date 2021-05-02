@@ -2,13 +2,20 @@ let namesL = document.querySelector(".names");
 
 var factoryFunction = greetExerciseFactFunct();
 var name12 = {}
-// namesL.innerHTML = JSON.stringify(factoryFunction.values().theNameList);
 
 if ( localStorage['names']) {
     name12 = JSON.parse((localStorage['names']));
 }
 
-// factoryFunction.retrieve();
 
-namesL.innerHTML = JSON.stringify(name12);
+
+
+for (const prop in name12) {
+    
+    var newDiv = document.createElement("div");
+    var newText = document.createTextNode(prop + ": " + name12[prop]);
+    newDiv.appendChild(newText);
+    namesL.appendChild(newDiv);
+}
+
 
